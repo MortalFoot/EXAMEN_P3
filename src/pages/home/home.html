@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
+    <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Camara
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click) = "getPicture()">
+        <ion-icon name = "camera"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-card *ngFor="let imagen of items">
+ <!-- {{imagen | json}} -->
+ <img src={{imagen.url}}>
+ <ion-card-content>
+   <h2>Tipo de árbol: {{imagen.Tipoar}}</h2>
+   <h2>Ancho de la copa: {{imagen.anchoc}} metros </h2>
+   <h2>Ancho del tronco: {{imagen.anchot}} metros</h2>
+   <h2>Latitud: {{imagen.Latitud}}</h2>
+   <h2>Longitud: {{imagen.Longitud}} </h2> 
+ </ion-card-content>
+</ion-card>
 </ion-content>
